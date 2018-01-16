@@ -5,7 +5,7 @@ dhtmlxEvent(window,"load",function(){
   Documents.Grid = Documents.Page.attachDataView({
 	  container:"data_container",
 		type:{
-		  template:"<img src=#id#.jpg></img><br>#NAME#",
+		  template:"<img src=\'/docpages/thumbnails/#id#.jpg\' height=90></img><br>#NAME#",
 			height:100
 		}
   });
