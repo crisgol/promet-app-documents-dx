@@ -1,5 +1,5 @@
 var Documents;
-dhtmlxEvent(window,"load",function(){
+window.addEventListener('AfterLogin',function(){
   Documents = newPrometList('docpages','Dokumente');
   Documents.Grid.destructor();
   Documents.Grid = Documents.Page.attachDataView({
