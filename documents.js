@@ -59,3 +59,10 @@ window.addEventListener('AfterLogin',function(){
     }
   }
 });
+window.addEventListener('AfterLogout',function(){
+  Documents.Grid.destructor();
+  Documents.Page.remove();
+  delete Documents;
+  Documents = {};
+  Documents = null;
+});
