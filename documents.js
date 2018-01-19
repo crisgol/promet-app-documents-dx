@@ -5,7 +5,7 @@ window.addEventListener('AfterLogin',function(){
   Documents.Grid = Documents.Page.attachDataView({
 	  container:"data_container",
 		type:{
-		  template:"<img src=\'/docpages/thumbnails/#id#.jpg\' height=90></img><br>#NAME#",
+		  template:"<img src=\'/docpages/blobdata/thumbnail/#id#.jpg\' height=90></img><br>#NAME#",
 			height:100
 		}
   });
@@ -20,7 +20,7 @@ window.addEventListener('AfterLogin',function(){
     }
     aDS.loading = true;
     if (LoadData(aURL,function(aData){
-      console.log("Data loaded");
+      //console.log("Data loaded");
       try {
         aGrid.clearAll();
         if ((aData)&&(aData.xmlDoc))
@@ -46,7 +46,7 @@ window.addEventListener('AfterLogin',function(){
       if (Callback)
         Callback();
     })==true) {
-      console.log("Data loading...");
+      //console.log("Data loading...");
     }
     else {
       if (Callback)
