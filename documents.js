@@ -1,11 +1,18 @@
 var Documents;
+function ImgError(source){
+  console.log('error loading img');
+  source.src = "/documents/noimage.png";
+  source.onerror = "";
+  return true;
+}
+
 window.addEventListener('AfterLogin',function(){
   Documents = newPrometList('docpages','Dokumente');
   Documents.Grid.destructor();
   Documents.Grid = Documents.Page.attachDataView({
 	  container:"data_container",
 		type:{
-		  template:"<img src=\'/docpages/blobdata/thumbnail/#id#.jpg\' height=90></img><br>#NAME#",
+		  template:"<img src=\'/docpages/blobdata/thumbnail/#id#.jpg\' height=90  onerror=\'ImgError(this)\'></img><br>#NAME#",
 			height:100
 		}
   });
